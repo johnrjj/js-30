@@ -1,5 +1,4 @@
 const playAudio = (audio: HTMLAudioElement) => {
-  if (!audio) return;
   audio.currentTime = 0;
   audio.play();
 };
@@ -7,6 +6,7 @@ const playAudio = (audio: HTMLAudioElement) => {
 const playFromKeydown = (e: KeyboardEvent) => {
   const audio: HTMLAudioElement = <HTMLAudioElement>document.querySelector(`audio[data-key="${e.keyCode}"]`);
   const key: Element = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+  if (!audio) return;
   playAudio(audio);
   key.classList.add('playing');
 };
@@ -14,6 +14,7 @@ const playFromKeydown = (e: KeyboardEvent) => {
 const playFromClick = (key: Element) => {
   const dataKey: string = key.getAttribute('data-key');
   const audio: HTMLAudioElement = <HTMLAudioElement>document.querySelector(`audio[data-key="${dataKey}"]`);
+  if (!audio) return;
   playAudio(audio);
   key.classList.add('playing');
 };
