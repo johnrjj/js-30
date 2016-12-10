@@ -17,7 +17,7 @@ const playFromClick = (key) => {
     key.classList.add('playing');
 };
 const removeTransition = (key, e) => {
-    const transitionEvent = e;
+    const transitionEvent = e; // need to cast here boo
     if (transitionEvent.propertyName !== 'box-shadow')
         return;
     key.classList.remove('playing');

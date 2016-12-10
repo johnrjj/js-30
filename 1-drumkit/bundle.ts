@@ -5,21 +5,21 @@ const playAudio = (audio: HTMLAudioElement) => {
 };
 
 const playFromKeydown = (e: KeyboardEvent) => {
-  const audio = <HTMLAudioElement>document.querySelector(`audio[data-key="${e.keyCode}"]`);
-  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+  const audio: HTMLAudioElement = <HTMLAudioElement>document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  const key: Element = document.querySelector(`.key[data-key="${e.keyCode}"]`);
   playAudio(audio);
   key.classList.add('playing');
 };
 
 const playFromClick = (key: Element) => {
-  const dataKey = key.getAttribute('data-key');
-  const audio = <HTMLAudioElement>document.querySelector(`audio[data-key="${dataKey}"]`);
+  const dataKey: string = key.getAttribute('data-key');
+  const audio: HTMLAudioElement = <HTMLAudioElement>document.querySelector(`audio[data-key="${dataKey}"]`);
   playAudio(audio);
   key.classList.add('playing');
 };
 
 const removeTransition = (key: Element, e: Event) => {
-  const transitionEvent = <TransitionEvent>e;
+  const transitionEvent: TransitionEvent = <TransitionEvent>e; // need to cast here boo
   if (transitionEvent.propertyName !== 'box-shadow') return;
   key.classList.remove('playing');
 };
