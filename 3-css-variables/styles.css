@@ -1,0 +1,52 @@
+/*
+CSS Variable
+- declare on 'some' element (here we're doing :root)
+- variables typically start with -- (backwards compatability)
+- to consume/use variable, use var(VARIABLENAME) e.g. var(--spacing)
+*/
+:root {
+   /*Variable definition*/
+  --base: #ffc600;
+  --spacing: 10px;
+  --blur: 10px;
+}
+
+img {
+  /*Variable consuming*/
+  padding: var(--spacing);
+  background: var(--base);
+  filter: blur(var(--blur));
+}
+
+.highlight {
+  color: var(--base);
+}
+/*END CSS VARIABLES*/
+
+
+/*Style defaults below...*/
+body {
+  text-align: center; /* center all contents of */
+  background: #9D50BB; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #9D50BB , #6E48AA); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #9D50BB , #6E48AA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: 'Oxygen', 'helvetica neue';
+  text-shadow:1px 1px 1px 1px rgba(0,0,0,0.005);
+  color: white;
+  font-weight: 100;
+  font-size: 30px;
+}
+
+.controls {
+  margin-bottom: 50px;
+}
+
+a {
+  color: var(--base);
+  text-decoration: none;
+}
+
+input {
+  width: 100px;
+  vertical-align: middle;
+}
