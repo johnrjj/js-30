@@ -35,25 +35,38 @@ h1 {
   text-shadow: 3px 4px 0 rgba(0,0,0,0.2)
 }
 
-nav {
+.navbar {
   background: black;
   top: 0;
+  left: 0;
   width: 100%;
+  height: 3rem;
   position: relative;
 }
 
-.fixed-nav nav {
+.navbar-spacer {
+  background: white;
+  height: 100px;
+  height: 3rem;
+  display: none;
+}
+
+.fixed-nav .navbar-spacer {
+  display: block;
+}
+
+.fixed-nav .navbar {
   position: fixed;
 }
 
-nav ul {
+.navbar ul {
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
 }
 
-nav li {
+.navbar li {
   flex: 1;
   text-align: center;
   display: flex;
@@ -61,11 +74,11 @@ nav li {
   align-items: center;
 }
 
-nav a:hover {
+.navbar a:hover {
   color: blue;
 }
 
-nav a {
+.navbar a {
   text-decoration: none;
   padding: 20px;
   display: inline-block;
@@ -73,16 +86,3 @@ nav a {
   transition: all 0.2s;
   text-transform: uppercase;
 }
-
-/*li.logo {
-  max-width:0;
-  overflow: hidden;
-  background: white;
-  transition: all .5s;
-  font-weight: 600;
-  font-size: 30px;
-}
-
-li.logo a {
-  color:black;
-}*/
